@@ -1,0 +1,177 @@
+% !TEX root = .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ===== SWITCHES FOR VERSION ========
+% Uncomment the `\<switch>true' line to activate
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ____Anonymous_____
+\newif\ifanonymous 
+% \anonymoustrue
+
+% ____Full version____
+% allows you to define portions of text which will only appear in the full version
+\newif\iffull
+\fulltrue
+
+% ____Author notes/comments____
+\newif\ifauthnotes
+\authnotestrue
+\ifanonymous\authnotesfalse\fi % failsafe for anonymity
+
+% ______Conference layouts_______
+%%% IEEE template
+\newif\ifieee 
+% \ieeetrue
+
+%%% IACR template
+\newif\ifiacr
+% \iacrtrue
+
+%%% ACM CCS template
+\newif\ifccs
+% \ccstrue
+
+%%% Default: fullpage LNCS (eprint)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ===== DOCUMENT SETUP OPTIONS ========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifieee
+    \documentclass[conference,compsoc]{IEEEtran}
+    \usepackage{enumitem}
+    \setlist{leftmargin=*}
+    % \ifCLASSOPTIONcompsoc
+    %   % IEEE Computer Society needs nocompress option
+    %   % requires cite.sty v4.0 or later (November 2003)
+      \usepackage[nocompress]{cite}
+    % \else
+    %   % normal IEEE
+    %   \usepackage{cite}
+    % \fi
+\else\ifiacr
+    \documentclass[runningheads]{llncs}
+    \let\proof\relax
+    \let\endproof\relax
+\else\ifccs
+    \ifanonymous
+        \documentclass[sigconf,anonymous]{acmart}
+    \else
+        \documentclass[sigconf]{acmart} % options: review, anonymous, nonacm, screen
+        % TODO update the following:
+        \copyrightyear{2022}
+        \acmYear{2022}
+        \setcopyright{acmlicensed}
+        \acmConference[CCS '22]{Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security}{November 7--11, 2022}{Los Angeles, CA, USA}
+        \acmBooktitle{Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security (CCS '22), November 7--11, 2022, Los Angeles, CA, USA}
+        \acmPrice{15.00}
+        \acmDOI{}
+        \acmISBN{}
+        
+        \settopmatter{printacmref=true}
+    \fi
+\else
+    \documentclass{article}
+    \usepackage{fullpage}
+\fi\fi\fi
+
+\input{includes}
+\input{macros}
+\ifiacr
+\hypersetup{bookmarksdepth=2}
+\fi
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= FRONT MATTER ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Paper Title}
+\date{}
+\ifanonymous
+\else
+    \ifieee
+        \input{authors/ieee}
+    \else\ifiacr
+        \input{authors/iacr}
+    \else\ifccs
+        \input{authors/ccs}
+    \else
+        \input{authors/eprint}
+    \fi\fi\fi
+\fi
+
+\ifccs\else\maketitle\fi
+\begin{abstract}
+    \input{src/abstract}
+
+    \ifiacr
+    \keywords{A keyword \and Another keyword.}
+    \fi
+\end{abstract}
+
+\ifieee
+    \begin{IEEEkeywords}
+    A keyword, another keyword.
+    \end{IEEEkeywords}
+
+    \IEEEpeerreviewmaketitle
+\else\ifccs
+    \keywords{A keyword, another keyword}
+    \maketitle
+\else\ifiacr
+\else
+    \noindent \textbf{Keywords:} A keyword, another keyword.
+\fi\fi\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= PAPER BODY ==========
+% Input your source files here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{src/intro}
+% \input{src/tech-overview}
+% \input{src/prelims}
+% etc....
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= REFERENCES ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifieee
+    \bibliographystyle{IEEEtran}
+    \bibliography{IEEEabrv,
+        cryptobib/abbrev3,
+        cryptobib/crypto_crossref,
+        extrarefs
+    }
+\else\ifccs
+    \bibliographystyle{ACM-Reference-Format}
+    % \balance % make columns on last page equal length
+    \bibliography{
+        cryptobib/abbrev3,
+        cryptobib/crypto_crossref,
+        extrarefs
+    }
+\else
+    {\small
+    \bibliographystyle{alpha}
+    \bibliography{
+        cryptobib/abbrev3,
+        cryptobib/crypto_crossref,
+        extrarefs
+    }
+    }
+\fi\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= APPENDICES ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifccs
+    \begin{appendix}
+\else
+    \appendix
+\fi
+
+\input{src/appendix}
+% etc....
+
+\ifccs\end{appendix}\fi
+
+\end{document}

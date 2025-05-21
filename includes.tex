@@ -1,0 +1,48 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\ifccs\else
+\usepackage{amssymb}
+\fi
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue,
+}
+\usepackage{bookmark} % improved bookmark generation for hyperref
+\usepackage{cleveref}
+
+\ifieee\else
+\ifiacr\else
+\ifccs\else
+\usepackage{authblk}
+\fi\fi\fi
+
+% ___Other useful packages___
+% \usepackage{xspace}
+% \usepackage{xurl}
+% \usepackage{cite}
+% \usepackage{enumerate}
+% \usepackage{enumitem}
+% \usepackage{wasysym}
+% \usepackage{tabularx}
+% \usepackage{booktabs}
+% \setlength\belowbottomsep{0.5em}
+% \usepackage{multirow,multicol,makecell}
+% \usepackage{subcaption}
+% \usepackage[
+%     adversary,
+%     asymptotics,
+%     lambda,
+%     mm,
+%     operators,
+% ]{cryptocode}
+
+% ________TikZ_____
+% \usepackage{tikz}
+% \usetikzlibrary{arrows.meta}

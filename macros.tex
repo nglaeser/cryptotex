@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= SYMBOLS ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\no}{\Circle}
+% \newcommand{\yes}{\CIRCLE}
+% \newcommand{\halfcirc}{\LEFTcircle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= AUTHOR NOTES ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifauthnotes
+\newcommand{\new}[1]{\textcolor{magenta}{[new] #1}}
+\newcommand{\todo}[1]{\textcolor{red}{[todo] #1}}
+\newcommand{\fnote}[1]{\textcolor{orange}{First Author: #1}}
+\newcommand{\snote}[1]{\textcolor{blue}{Second Author: #1}}
+\else
+\newcommand{\new}[1]{}
+\newcommand{\todo}[1]{}
+\newcommand{\fnote}[1]{}
+\newcommand{\snote}[1]{}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= GENERAL MATH ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\gp}{\ensuremath{\mathbb{G}}}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\FF}{\ensuremath{\mathbb{F}}}
+\newcommand{\sizeof}[1]{\lvert #1 \rvert}
+
+% _____Theorem/Definition environments____
+\theoremstyle{definition}
+\newtheorem{construction}{Construction}
+\ifiacr
+\else
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======= CRYPTOGRAPHY ==========
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% _____Languages and Relations______
+\newcommand{\Rel}{\ensuremath{\mathcal{R}}}
+\newcommand{\Lang}{\ensuremath{\mathcal{L}}}
+
+% _____Adversaries and Experiments_____
+\newcommand{\Sim}{\ensuremath{\sdv}}
+\newcommand{\hybrid}{\ensuremath{\mathcal{H}}}
+\newcommand{\ext}{\ensuremath{{\mathsf{Ext}}}}
+
+% _____Cryptographic primitives_________
+%%% Common algorithms
+\newcommand{\Setup}{\ensuremath{{\mathsf{Setup}}}}
+\newcommand{\kgen}{\ensuremath{{\mathsf{KGen}}}}
+\newcommand{\vrfy}{\ensuremath{{\mathsf{Verify}}}}
+%%% Encryption
+\newcommand{\enc}{\ensuremath{{\mathsf{Enc}}}}
+\newcommand{\dec}{\ensuremath{{\mathsf{Dec}}}}
+\newcommand{\ek}{\ensuremath{\mathsf{ek}}} % encryption (public) key
+\newcommand{\dk}{\ensuremath{\mathsf{dk}}} % decrpytion (private) key
+%%% Signatures
+\newcommand{\sign}{\ensuremath{{\mathsf{Sign}}}}
+\newcommand{\vk}{\ensuremath{{vk}}} % verification (public) key
+\newcommand{\sk}{\ensuremath{{sk}}} % signing (private) key
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% =========== CUSTOM ============
+% Add custom macros here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
