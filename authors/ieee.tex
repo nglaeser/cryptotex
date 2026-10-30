@@ -1,14 +1,25 @@
+\input{authors/authors}
+
 \author{
-\IEEEauthorblockN{First Author}
-\IEEEauthorblockA{
-University of First\\
-email1@uni1.edu
+% ---- Author 1 ----
+\IEEEauthorblockN{\AuthorOneName%
+  \ifx\AuthorOneNote\empty\else\thanks{\AuthorOneNote}\fi
 }
+\IEEEauthorblockA{
+\AuthorOneInst
+\ifcsname AuthorOneInstTwo\endcsname\ \&\\\AuthorOneInstTwo\fi\\
+\AuthorOneEmail
+}
+% ---- Author 2 ----
 \and
-\IEEEauthorblockN{Second Author\thanks{This work was completed while S.A. was at Other University.}}
-\IEEEauthorblockA{
-University of Second \&\\
-Third Institute\\
-email2@uni2.edu
+\IEEEauthorblockN{\AuthorTwoName%
+  \ifx\AuthorTwoNote\empty\else\thanks{\AuthorTwoNote}\fi
 }
+\IEEEauthorblockA{
+\AuthorTwoInst
+\ifcsname AuthorTwoInstTwo\endcsname\ \&\\\AuthorTwoInstTwo\fi\\
+\AuthorTwoEmail
+}
+% ---- Additional Authors ----
+% add more author blocks as necessary...
 }

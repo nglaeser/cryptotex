@@ -1,6 +1,12 @@
-\author[1]{First Author\thanks{email1@uni1.edu}}
-\author[2,3]{Second Author\thanks{email2@uni2.edu. This work was completed while S.A. was at Other University.}}
+\input{authors/authors}
 
-\affil[1]{University of First}
-\affil[2]{University of Second}
-\affil[3]{Third Institute}
+\author[\AuthorOneInstIdxs]{\AuthorOneName\thanks{\AuthorOneEmail%
+  \ifx\AuthorOneNote\empty\else . \AuthorOneNote\fi
+}}
+\author[\AuthorTwoInstIdxs]{\AuthorTwoName\thanks{\AuthorTwoEmail%
+  \ifx\AuthorTwoNote\empty\else . \AuthorTwoNote\fi
+}}
+
+\affil[1]{\InstOne}
+\ifcsname InstTwo\endcsname\affil[2]{\InstTwo}\fi
+\ifcsname InstThree\endcsname\affil[3]{\InstThree}\fi
