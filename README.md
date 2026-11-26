@@ -5,9 +5,11 @@ CryptoTeX is a LaTeX template which is optimized for writing LaTeX for cryptogra
 - formatting for common conference formats
 - [cryptobib](https://cryptobib.di.ens.fr/) with cross-references for easy citation management
 
-&#x2705; If you'd like to use this template, please use the green **"Use this template" button** at the top right of this page (next to the Star button). This will give you a clean git history, allow your repo to be private, and credit this template :) Read more about repository templates [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+> [!TIP]
+> If you'd like to use this template, please use the green **"Use this template" button** at the top right of this page (next to the Star button). This will give you a clean git history, allow your repo to be private, and credit this template :) Read more about repository templates [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
-&#128680; **THIS REPO IS NOT KEEPING TRACK OF CHANGES IN CONFERENCE FORMAT REQUIREMENTS. YOU ARE RESPONSIBLE FOR ENSURING YOUR MANUSCRIPT MEETS THE CONFERENCE SUBMISSION GUIDELINES.**
+> [!CAUTION]
+> This repo does not track changes in conference format requirements. You are responsible for ensuring your manuscript meets the conference submission guidelines.
 
 ## Setup
 - This repo uses [latexmk](https://www.cantab.net/users/johncollins/latexmk/). Add the `-outdir=build` flag to your `latexmk` command (via [VSCode settings](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#latex-tools), `latexmkrc` file, etc.).
